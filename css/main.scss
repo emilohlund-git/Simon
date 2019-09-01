@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+$boxSize: 300px;
+$boxBorder: 10px solid #000;
+$font: "Roboto", sans-serif;
+
+@mixin panels-styling {
+  height: $boxSize;
+  width: $boxSize;
+  border: $boxBorder;
+  transition: all 0.2s ease-in-out;
+}
+
+* {
+  body {
+    background-color: rgb(14, 14, 14);
+  }
+  button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 45px;
+    margin-left: -25px;
+    margin-top: -85px;
+    border: 10px solid rgb(0, 0, 0);
+    border-radius: 155px;
+    background: rgb(255, 0, 0);
+    background: radial-gradient(
+      circle,
+      rgba(255, 0, 0, 1) 58%,
+      rgba(144, 0, 0, 1) 100%
+    );
+    color: rgb(165, 165, 165);
+    font-family: $font;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 15px;
+    &:hover {
+      cursor: pointer;
+      background: rgb(105, 10, 10);
+    }
+    &:focus {
+        outline: 0;
+    }
+    span {
+      position: absolute;
+      margin-top: 29px;
+      margin-left: -22px;
+    }
+  }
+  .board {
+    border: 20px solid #000;
+    border-radius: 450px;
+    background: #000;
+    height: 550px;
+    width: 550px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -375px;
+    margin-left: -295px;
+    overflow: hidden;
+    .logo-button {
+      text-align: center;
+      border-radius: 150px;
+      position: absolute;
+      height: 175px;
+      line-height: 165px;
+      width: 175px;
+      left: 50%;
+      top: 50%;
+      margin-top: -107px;
+      margin-left: -107px;
+      background: rgb(115, 115, 115);
+      background: radial-gradient(
+        circle,
+        rgba(115, 115, 115, 1) 58%,
+        rgba(45, 45, 45, 1) 100%
+      );
+      border: 20px solid #000;
+      span {
+        position: absolute;
+        font-family: $font;
+        cursor: default;
+        font-size: 25px;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+        color: #fff;
+        font-weight: 700;
+        margin-top: 35px;
+        margin-left: -40px;
+      }
+    }
+    .row1,
+    .row2 {
+      display: inline-block;
+      margin-top: -45px;
+    }
+    .row1 {
+      margin-left: -45px;
+    }
+    .green {
+      @include panels-styling;
+      background: green;
+    }
+    .red {
+      @include panels-styling;
+      background: red;
+    }
+    .blue {
+      @include panels-styling;
+      background: blue;
+    }
+    .yellow {
+      @include panels-styling;
+      background: yellow;
+    }
+  }
+}
