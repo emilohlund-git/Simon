@@ -2,11 +2,15 @@
 let startButton = document.querySelector(".start");
 let board = document.querySelector(".board");
 
+let currentScore = 0;
+let points = document.querySelector(".points");
+let score = document.createElement("p");
+score.classList.add("score");
+points.appendChild(score);
+score.innerHTML = currentScore;
+
 let logoButton = document.createElement("div");
 logoButton.classList.add("logo-button");
-let logoText = document.createElement("span");
-logoText.innerHTML = "SIMON";
-logoButton.appendChild(logoText);
 
 let row1 = document.createElement("div");
 row1.classList.add("row1");
@@ -74,6 +78,16 @@ function changeColor(panel) {
 }
 
 function playSequence() {
+  colorPanels.forEach(function(panel) {
+    panel.addEventListener("mouseenter", function() {
+      if (amountOfBeeps < 1) {
+        panel.style.cursor = "pointer";
+      } else {
+        panel.style.cursor = "default";
+      }
+    });
+  });
+
   var levelBeeps = setInterval(function() {
     let rn = randomNum();
     panelsToPress.push(colorPanels[rn].id);
@@ -81,8 +95,6 @@ function playSequence() {
     var beep = new Audio("sounds/beep.mp3");
     beep.play();
     changeColor(rn);
-
-    console.log(panelsToPress);
     amountOfBeeps--;
 
     if (amountOfBeeps < 1) {
@@ -99,7 +111,9 @@ colorPanels.forEach(function(panel) {
   panel.addEventListener("click", function() {
     if (amountOfBeeps < 1) {
       target = document.getElementById(panelsToPress[current]);
-      if (this.id == target.id && !lost) {
+      if (this == target && !lost) {
+        currentScore++;
+        score.innerHTML = currentScore;
         playSound("beep");
         this.style.background =
           "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)";
@@ -108,11 +122,10 @@ colorPanels.forEach(function(panel) {
           panel.style.background = panel.id;
         }, 100);
         if (current == panelsToPress.length) {
-          console.log("win");
           win = true;
           winFunction();
         }
-      } else if (this.id != target.id) {
+      } else if (this != target) {
         lost = true;
         loseFunction();
       }
@@ -121,6 +134,8 @@ colorPanels.forEach(function(panel) {
 });
 
 function loseFunction() {
+  currentScore = 0;
+  score.innerHTML = currentScore;
   startButton.style.background = "red";
   playing = false;
   playSound("ping");
@@ -135,7 +150,6 @@ function loseFunction() {
     }, 1500);
   });
   setTimeout(function() {
-    console.log("Ready");
     lost = false;
   }, 1500);
 }
@@ -143,7 +157,7 @@ function loseFunction() {
 function winFunction() {
   playSound("tone");
   panelsToPress = [];
-  currentLevel += 2;
+  currentLevel += 1;
   levelSpeed -= 35;
   amountOfBeeps = currentLevel;
   current = 0;
@@ -154,7 +168,6 @@ function winFunction() {
     }, 1500);
   });
   setTimeout(function() {
-    console.log("Ready");
     playSequence();
   }, 5000);
 }
@@ -164,10 +177,9 @@ function playSound(sound) {
   tone.play();
 }
 
-console.log(startButton);
-
 startButton.addEventListener("click", function() {
-  startButton.style.background = "rgb(105, 10, 10)";
+  startButton.style.background = "rgb(46, 4, 4)";
+  startButton.style.cursor = "default";
   if (!playing) {
     playing = true;
     playSequence();

@@ -3,28 +3,36 @@
   background-color: #0e0e0e;
 }
 
+* .points .score {
+  font-family: "Roboto", sans-serif;
+  font-size: 55px;
+  color: #fff;
+  margin-left: 45px;
+}
+
 * button {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 50px;
-  height: 45px;
-  margin-left: -25px;
-  margin-top: -85px;
+  width: 85px;
+  height: 85px;
+  margin-left: -43px;
+  margin-top: -120px;
   border: 10px solid black;
-  border-radius: 155px;
+  border-radius: 55px;
   background: red;
-  background: radial-gradient(circle, red 58%, #900000 100%);
-  color: #a5a5a5;
+  color: white;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 15px;
+  -webkit-transition: background 0.1s ease-in-out;
+  transition: background 0.1s ease-in-out;
 }
 
 * button:hover {
   cursor: pointer;
-  background: #690a0a;
+  background: #2e0404;
 }
 
 * button:focus {
@@ -33,14 +41,13 @@
 
 * button span {
   position: absolute;
-  margin-top: 29px;
+  margin-top: -7px;
   margin-left: -22px;
 }
 
 * .board {
   border: 20px solid #000;
   border-radius: 450px;
-  background: #000;
   height: 550px;
   width: 550px;
   display: -webkit-box;
@@ -68,20 +75,6 @@
   background: #737373;
   background: radial-gradient(circle, #737373 58%, #2d2d2d 100%);
   border: 20px solid #000;
-}
-
-* .board .logo-button span {
-  position: absolute;
-  font-family: "Roboto", sans-serif;
-  cursor: default;
-  font-size: 25px;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-  color: #fff;
-  font-weight: 700;
-  margin-top: 35px;
-  margin-left: -40px;
 }
 
 * .board .row1,
@@ -128,5 +121,40 @@
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   background: yellow;
+}
+
+@media only screen and (max-width: 600px) {
+  * * button {
+    margin-top: -47px;
+  }
+  * * .board {
+    position: relative;
+    margin: 0 auto;
+    margin-left: -2px;
+    border: none;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+    display: flexbox;
+    width: 100%;
+    height: 550px;
+  }
+  * * .board .logo-button {
+    display: none;
+  }
+  * * .board .row1,
+  * * .board .row2 {
+    margin: 0;
+    display: inline-block;
+  }
+  * * .board .green,
+  * * .board .red,
+  * * .board .blue,
+  * * .board .yellow {
+    border-radius: 0;
+    margin: 0;
+    width: 22vh;
+    height: 215px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -15,44 +15,48 @@ $font: "Roboto", sans-serif;
   body {
     background-color: rgb(14, 14, 14);
   }
+  .points {
+    .score {
+      font-family: $font;
+      font-size: 55px;
+      color: #fff;
+      margin-left: 45px;
+    }
+  }
   button {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 50px;
-    height: 45px;
-    margin-left: -25px;
-    margin-top: -85px;
+    width: 85px;
+    height: 85px;
+    margin-left: -43px;
+    margin-top: -120px;
     border: 10px solid rgb(0, 0, 0);
-    border-radius: 155px;
+    border-radius: 55px;
     background: rgb(255, 0, 0);
-    background: radial-gradient(
-      circle,
-      rgba(255, 0, 0, 1) 58%,
-      rgba(144, 0, 0, 1) 100%
-    );
-    color: rgb(165, 165, 165);
+    color: rgb(255, 255, 255);
     font-family: $font;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 15px;
+    transition: background 0.1s ease-in-out;
     &:hover {
       cursor: pointer;
-      background: rgb(105, 10, 10);
+      background: rgb(46, 4, 4);
     }
     &:focus {
-        outline: 0;
+      outline: 0;
     }
     span {
       position: absolute;
-      margin-top: 29px;
+      margin-top: -7px;
       margin-left: -22px;
     }
   }
   .board {
     border: 20px solid #000;
     border-radius: 450px;
-    background: #000;
+
     height: 550px;
     width: 550px;
     display: flex;
@@ -80,19 +84,6 @@ $font: "Roboto", sans-serif;
         rgba(45, 45, 45, 1) 100%
       );
       border: 20px solid #000;
-      span {
-        position: absolute;
-        font-family: $font;
-        cursor: default;
-        font-size: 25px;
-        display: inline-block;
-        vertical-align: middle;
-        line-height: normal;
-        color: #fff;
-        font-weight: 700;
-        margin-top: 35px;
-        margin-left: -40px;
-      }
     }
     .row1,
     .row2 {
@@ -119,4 +110,5 @@ $font: "Roboto", sans-serif;
       background: yellow;
     }
   }
+  @import 'mobile.scss';
 }
