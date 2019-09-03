@@ -1,4 +1,4 @@
-# Your Project's Name
+# Simon Says Game
 
 This is a simple 'Simon says' game made in Javascript, HTML5 & CSS3 without any dependencies.
  
