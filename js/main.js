@@ -169,7 +169,7 @@ function winFunction() {
   });
   setTimeout(function() {
     playSequence();
-  }, 5000);
+  }, 3000);
 }
 
 function playSound(sound) {

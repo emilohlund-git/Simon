@@ -1,35 +1,60 @@
 @media only screen and (max-width: 600px) {
   * {
-      button {
-          margin-top: -47px;
-      }
+    box-sizing: border-box;
+    .score {
+      margin: 25px 0 25px 0;
+    }
+    button {
+      position: fixed;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      top: 100%;
+      margin-top: -85px;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: red;
+      color: white;
+      text-align: center;
+    }
+    body {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+    }
     .board {
+      flex: 1;
       position: relative;
       margin: 0 auto;
-      margin-left: -2px;
       border: none;
       left: 0;
       top: 0;
-      border-radius: 0;
-      display: flexbox;
       width: 100%;
-      height: 550px;
+      height: 100%;
+      border-radius: 350px;
+      background: #fff;
+      overflow: hidden;
       .logo-button {
-       display: none;
+        display: none;
       }
-      .row1,
+      .row1 {
+        margin: 0;
+        width: 50%;
+        .green,
+        .red {
+          border: none;
+          width: 100%;
+        }
+      }
       .row2 {
         margin: 0;
-        display: inline-block;
-      }
-      .green,
-      .red,
-      .blue,
-      .yellow {
-        border-radius: 0;
-        margin: 0;
-        width: 22vh;
-        height: 215px;
+        width: 50%;
+        .blue,
+        .yellow {
+          border: none;
+          width: 100%;
+        }
       }
     }
   }

@@ -17,7 +17,7 @@
   width: 85px;
   height: 85px;
   margin-left: -43px;
-  margin-top: -120px;
+  margin-top: -20px;
   border: 10px solid black;
   border-radius: 55px;
   background: red;
@@ -56,9 +56,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-top: -375px;
+  margin-top: -275px;
   margin-left: -295px;
-  overflow: hidden;
 }
 
 * .board .logo-button {
@@ -87,7 +86,7 @@
   margin-left: -45px;
 }
 
-* .board .green {
+* .board .row1 .green {
   height: 300px;
   width: 300px;
   border: 10px solid #000;
@@ -96,7 +95,7 @@
   background: green;
 }
 
-* .board .red {
+* .board .row1 .red {
   height: 300px;
   width: 300px;
   border: 10px solid #000;
@@ -105,7 +104,7 @@
   background: red;
 }
 
-* .board .blue {
+* .board .row2 .blue {
   height: 300px;
   width: 300px;
   border: 10px solid #000;
@@ -114,7 +113,7 @@
   background: blue;
 }
 
-* .board .yellow {
+* .board .row2 .yellow {
   height: 300px;
   width: 300px;
   border: 10px solid #000;
@@ -124,37 +123,72 @@
 }
 
 @media only screen and (max-width: 600px) {
+  * * {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  * * .score {
+    margin: 25px 0 25px 0;
+  }
   * * button {
-    margin-top: -47px;
+    position: fixed;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    top: 100%;
+    margin-top: -85px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+  }
+  * * body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
   }
   * * .board {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     position: relative;
     margin: 0 auto;
-    margin-left: -2px;
     border: none;
     left: 0;
     top: 0;
-    border-radius: 0;
-    display: flexbox;
     width: 100%;
-    height: 550px;
+    height: 100%;
+    border-radius: 350px;
+    background: #fff;
+    overflow: hidden;
   }
   * * .board .logo-button {
     display: none;
   }
-  * * .board .row1,
+  * * .board .row1 {
+    margin: 0;
+    width: 50%;
+  }
+  * * .board .row1 .green,
+  * * .board .row1 .red {
+    border: none;
+    width: 100%;
+  }
   * * .board .row2 {
     margin: 0;
-    display: inline-block;
+    width: 50%;
   }
-  * * .board .green,
-  * * .board .red,
-  * * .board .blue,
-  * * .board .yellow {
-    border-radius: 0;
-    margin: 0;
-    width: 22vh;
-    height: 215px;
+  * * .board .row2 .blue,
+  * * .board .row2 .yellow {
+    border: none;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */
