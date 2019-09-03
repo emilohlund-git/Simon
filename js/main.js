@@ -114,6 +114,14 @@ colorPanels.forEach(function(panel) {
       if (this == target && !lost) {
         currentScore++;
         score.innerHTML = currentScore;
+        if (currentScore > parseInt(document.getElementById("highscore").innerHTML)) {
+          document.getElementById("highscore").innerHTML = currentScore;
+          db.collection("highscore")
+            .doc("score")
+            .set({
+              highscore: document.getElementById("highscore").innerHTML,
+            });
+        }
         playSound("beep");
         this.style.background =
           "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)";

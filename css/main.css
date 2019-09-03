@@ -3,11 +3,18 @@
   background-color: #0e0e0e;
 }
 
+* body #highscore {
+  font-family: "Roboto", sans-serif;
+  font-size: 55px;
+  color: #fff;
+  margin-left: 30px;
+}
+
 * .points .score {
   font-family: "Roboto", sans-serif;
   font-size: 55px;
   color: #fff;
-  margin-left: 45px;
+  margin-left: 30px;
 }
 
 * button {
@@ -58,6 +65,7 @@
   top: 50%;
   margin-top: -275px;
   margin-left: -295px;
+  overflow: hidden;
 }
 
 * .board .logo-button {
@@ -123,10 +131,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-  * * {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
   * * .score {
     margin: 25px 0 25px 0;
   }
@@ -165,28 +169,32 @@
     top: 0;
     width: 100%;
     height: 100%;
-    border-radius: 350px;
+    border-radius: 0px;
     background: #fff;
-    overflow: hidden;
+    overflow: visible;
   }
   * * .board .logo-button {
     display: none;
   }
   * * .board .row1 {
     margin: 0;
+    height: 25px;
     width: 50%;
   }
   * * .board .row1 .green,
   * * .board .row1 .red {
+    height: 30vh;
     border: none;
     width: 100%;
   }
   * * .board .row2 {
     margin: 0;
+    height: 25px;
     width: 50%;
   }
   * * .board .row2 .blue,
   * * .board .row2 .yellow {
+    height: 30vh;
     border: none;
     width: 100%;
   }

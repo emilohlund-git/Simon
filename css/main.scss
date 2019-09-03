@@ -14,13 +14,19 @@ $font: "Roboto", sans-serif;
 * {
   body {
     background-color: rgb(14, 14, 14);
+    #highscore {
+      font-family: $font;
+      font-size: 55px;
+      color: #fff;
+      margin-left: 30px;
+    }
   }
   .points {
     .score {
       font-family: $font;
       font-size: 55px;
       color: #fff;
-      margin-left: 45px;
+      margin-left: 30px;
     }
   }
   button {
@@ -64,6 +70,7 @@ $font: "Roboto", sans-serif;
     top: 50%;
     margin-top: -275px;
     margin-left: -295px;
+    overflow: hidden;
     .logo-button {
       text-align: center;
       border-radius: 150px;
