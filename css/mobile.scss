@@ -1,5 +1,12 @@
 @media only screen and (max-width: 600px) {
   * {
+    #highscore {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 25px;
+      margin-right: 40px;
+    }
     .score {
       margin: 25px 0 25px 0;
     }
