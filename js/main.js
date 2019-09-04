@@ -1,46 +1,41 @@
 //Initialize the gameboard and components that goes on it
-let startButton = document.querySelector(".start");
-let board = document.querySelector(".board");
+let startButton = document.querySelector(".start"),
+    board = document.querySelector(".board"),
+    currentScore = 0,
+    points = document.querySelector(".points"),
+    score = document.createElement("p"),
+    logoButton = document.createElement("div"),
+    // Create the rows in which the panels reside
+    row1 = document.createElement("div"),
+    row2 = document.createElement("div"),
+    // Create the panels
+    green = document.createElement("div"),
+    red = document.createElement("div"),
+    blue = document.createElement("div"),
+    yellow = document.createElement("div");
 
-let currentScore = 0;
-let points = document.querySelector(".points");
-let score = document.createElement("p");
 score.classList.add("score");
 points.appendChild(score);
 score.innerHTML = currentScore;
-
-let logoButton = document.createElement("div");
 logoButton.classList.add("logo-button");
-
-let row1 = document.createElement("div");
 row1.classList.add("row1");
-
-let row2 = document.createElement("div");
 row2.classList.add("row2");
-
-let green = document.createElement("div");
 green.classList.add("green");
 green.id = "green";
 row1.appendChild(green);
-
-let red = document.createElement("div");
 red.classList.add("red");
 red.id = "red";
 row1.appendChild(red);
-
-let blue = document.createElement("div");
 blue.classList.add("blue");
 blue.id = "blue";
 row2.appendChild(blue);
-
-let yellow = document.createElement("div");
 yellow.classList.add("yellow");
 yellow.id = "yellow";
 row2.appendChild(yellow);
-
 board.appendChild(row1);
 board.appendChild(row2);
 board.appendChild(logoButton);
+/* End of game-board initialization */
 
 //Game functions
 /* Level handling */
@@ -65,13 +60,8 @@ var randomNum = function() {
   return Math.floor(Math.random() * colorPanels.length - 1) + 1;
 };
 
-function choosePanel() {
-  lightUpPanel();
-}
-
 function changeColor(panel) {
-  colorPanels[panel].style.background =
-    "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)";
+  colorPanels[panel].style.background = "#fff";
   setTimeout(function() {
     colorPanels[panel].style.background = panelColors[panel];
   }, 100);
@@ -128,7 +118,7 @@ colorPanels.forEach(function(panel) {
         current++;
         setTimeout(function() {
           panel.style.background = panel.id;
-        }, 100);
+        }, levelSpeed / 2);
         if (current == panelsToPress.length) {
           win = true;
           winFunction();
