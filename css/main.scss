@@ -1,8 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
+@import "menu";
+
 $boxSize: 300px;
 $boxBorder: 10px solid #000;
 $font: "Roboto", sans-serif;
+
+@mixin text {
+  font-size: 25px;
+  color: white;
+  font-family: $font;
+  text-align: center;
+}
 
 @mixin panels-styling {
   height: $boxSize;
@@ -12,21 +21,40 @@ $font: "Roboto", sans-serif;
 }
 
 * {
+  .game-box {
+    font-family: $font;
+    #welcome {
+      @include text;
+    }
+    #player {
+      @include text;
+    }
+  }
+  .sign-in-box {
+    padding-top: 13%;
+    font-family: $font;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    #logo {
+      @include text;
+      font-size: 50px;
+    }
+    input {
+      height: 35px;
+      width: 250px;
+      font-size: 25px;
+    }
+  }
   body {
     background-color: rgb(14, 14, 14);
     #highscore {
-      font-family: $font;
-      font-size: 55px;
-      color: #fff;
-      margin-left: 30px;
+      @include text;
     }
   }
   .points {
     .score {
-      font-family: $font;
-      font-size: 55px;
-      color: #fff;
-      margin-left: 30px;
+      @include text;
     }
   }
   button {

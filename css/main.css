@@ -1,20 +1,72 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+#main-menu {
+  text-align: center;
+}
+
+#main-menu p {
+  margin-top: 250px;
+  font-size: 45px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+* .game-box {
+  font-family: "Roboto", sans-serif;
+}
+
+* .game-box #welcome {
+  font-size: 25px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+* .game-box #player {
+  font-size: 25px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+* .sign-in-box {
+  padding-top: 13%;
+  font-family: "Roboto", sans-serif;
+  font-size: 35px;
+  color: white;
+  text-align: center;
+}
+
+* .sign-in-box #logo {
+  font-size: 25px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
+
+* .sign-in-box input {
+  height: 35px;
+  width: 250px;
+  font-size: 25px;
+}
+
 * body {
   background-color: #0e0e0e;
 }
 
 * body #highscore {
+  font-size: 25px;
+  color: white;
   font-family: "Roboto", sans-serif;
-  font-size: 55px;
-  color: #fff;
-  margin-left: 30px;
+  text-align: center;
 }
 
 * .points .score {
+  font-size: 25px;
+  color: white;
   font-family: "Roboto", sans-serif;
-  font-size: 55px;
-  color: #fff;
-  margin-left: 30px;
+  text-align: center;
 }
 
 * button {

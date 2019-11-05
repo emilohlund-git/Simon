@@ -13,9 +13,7 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 var docRef = db.collection("highscore").doc("score");
 docRef.get().then(function(doc) {
-  if (doc.exists) {
-    document.getElementById("highscore").innerHTML = doc.data().highscore;
-  } else {
-    document.getElementById("highscore").innerHTML = 0;
-  }
+  doc.exists
+    ? document.getElementById("highscore").innerHTML = doc.data().highscore
+    : document.getElementById("highscore").innerHTML = 0;
 });

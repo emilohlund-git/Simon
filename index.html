@@ -7,18 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
+    <script defer src="js/cache.js"></script>
     <title>Simon Says</title>
 </head>
 
 <body>
-    <div class="points"></div>
-    <p id="highscore">0</p>
-    <div class="board"></div>
-    <button class="start"><span>Start</span></button>
+    <div id="main-menu">
+        
+    </div>
+    <div id="sign-in-box" class="sign-in-box">
+        <p id="logo">Simon Says</p>
+        <p id="name">Enter your name:</p>
+        <input id="input-name" type="text">
+    </div>
+    <div id="game-box" class="game-box">
+        <p id="welcome"></p>
+        <div class="points">
+            <p id="highscore">0</p>
+        </div>
+        <div class="board"></div>
+        <button class="start"><span>Start</span></button>
+    </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
     <script src="js/firebase.js"></script>
+    <script src="lib/velocity.js"></script>
 </body>
 
 </html>
