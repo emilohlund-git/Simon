@@ -14,6 +14,6 @@ var db = firebase.firestore();
 var docRef = db.collection("highscore").doc("score");
 docRef.get().then(function(doc) {
   doc.exists
-    ? document.getElementById("highscore").innerHTML = doc.data().highscore
-    : document.getElementById("highscore").innerHTML = 0;
+    ? document.getElementById("highscore").innerHTML = "Current highscore: " + doc.data().highscore
+    : document.getElementById("highscore").innerHTML = "Current highscore: " + 0;
 });

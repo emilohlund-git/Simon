@@ -37,7 +37,7 @@ const mainMenu = document.getElementById("main-menu");
 
 score.classList.add("score");
 points.appendChild(score);
-score.innerHTML = currentScore;
+score.innerHTML = "Current score: " + currentScore;
 logoButton.classList.add("logo-button");
 row1.classList.add("row1");
 row2.classList.add("row2");
@@ -106,12 +106,12 @@ colorPanels.forEach(function(panel) {
       target = document.getElementById(panelsToPress[current]);
       if (this == target && !lost) {
         currentScore++;
-        score.innerHTML = currentScore;
+        score.innerHTML = "Current score: " + currentScore;
         if (
           currentScore >
           parseInt(document.getElementById("highscore").innerHTML)
         ) {
-          document.getElementById("highscore").innerHTML = currentScore;
+          document.getElementById("highscore").innerHTML = "Current highscore: " + currentScore;
           db.collection("highscore")
             .doc("score")
             .set({
@@ -144,7 +144,7 @@ colorPanels.forEach(function(panel) {
  */
 function loseFunction() {
   currentScore = 0;
-  score.innerHTML = currentScore;
+  score.innerHTML = "Current score: " + currentScore;
   startButton.style.background = "red";
   playing = false;
   playSound("ping");
@@ -213,6 +213,7 @@ const logo = document.createElement("p");
 const playButton = document.createElement("button");
 logo.style.color = "#fff";
 logo.innerHTML = "Simon Says";
+playButton.innerHTML = "Play";
 mainMenu.appendChild(logo);
 mainMenu.appendChild(playButton);
 
