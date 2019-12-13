@@ -1,5 +1,6 @@
 # Simon Says Game
 
+![Simon Says](SimonSays.jpg)
 This is a simple 'Simon says' game made in Javascript, HTML5 & CSS3 without any dependencies.
  
 ## UX
@@ -18,6 +19,7 @@ The game plays out a little something like this:
 
 - I hooked the project up with a [Firebase](https://firebase.google.com/) DB to keep track of the highscore.
 - Increasingly more difficult gameplay based on which level you are at, both the speed of the sequence and the sequence length is increased.
+- Lose screen which pauses and resets the game and allows you to play from scratch.
 
 ## Technologies Used
 
@@ -30,7 +32,7 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 ## Testing
 
-I've play tested the game enough to find that there are no bugs. It's not a huge game so it didn't require a whole lot of it.
+I've play tested the game enough to find that there are no bugs, pressing the highlighted buttons in the right & wrong order to make sure the game plays out correctly. Using the Chrome console to check if there is any problematic Javascript. During the proccess of creating the game I've continously looked for ways to enhance the code I've written, making it shorter & more effective.
 
 ## Deployment
 
