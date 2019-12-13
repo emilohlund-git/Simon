@@ -1,5 +1,4 @@
 //Initialize the gameboard and components that goes on it
-<<<<<<< HEAD
 const startButton = document.querySelector(".start"),
   board = document.querySelector(".board"),
   points = document.querySelector(".points"),
@@ -35,22 +34,6 @@ let current = 0,
 const gameBox = document.getElementById("game-box");
 const signInBox = document.getElementById("sign-in-box");
 const mainMenu = document.getElementById("main-menu");
-=======
-let startButton = document.querySelector(".start"),
-    board = document.querySelector(".board"),
-    currentScore = 0,
-    points = document.querySelector(".points"),
-    score = document.createElement("p"),
-    logoButton = document.createElement("div"),
-    // Create the rows in which the panels reside
-    row1 = document.createElement("div"),
-    row2 = document.createElement("div"),
-    // Create the panels
-    green = document.createElement("div"),
-    red = document.createElement("div"),
-    blue = document.createElement("div"),
-    yellow = document.createElement("div");
->>>>>>> 95b3506658730891f267533a58cf59e8ca4b99e6
 
 score.classList.add("score");
 points.appendChild(score);
@@ -74,38 +57,17 @@ board.appendChild(row1);
 board.appendChild(row2);
 board.appendChild(logoButton);
 /* End of game-board initialization */
-
-<<<<<<< HEAD
-=======
-//Game functions
-/* Level handling */
-var current = 0,
-  target,
-  lost = false,
-  win = false,
-  playing = false,
-  levelSpeed = 1000;
-var currentLevel = 3;
-var amountOfBeeps = currentLevel;
-var panelsToPress = [];
-
-/* Set all color-panels to an array */
-var colorPanels = [blue, green, yellow, red];
-
-/* And an array for their colors */
-var panelColors = ["blue", "green", "yellow", "red"];
-
 /* Random function to return a number from 0 to the length of the color panels array, to choose a random element */
 var randomNum = function() {
   return Math.floor(Math.random() * colorPanels.length - 1) + 1;
 };
 
->>>>>>> 95b3506658730891f267533a58cf59e8ca4b99e6
+// Function that changes a random panels background color to white and back to the original color after a set amount of time
 function changeColor(panel) {
   colorPanels[panel].style.background = "#fff";
   setTimeout(function() {
     colorPanels[panel].style.background = panelColors[panel];
-  }, 100);
+  }, 300);
 }
 
 function playSequence() {
@@ -222,7 +184,7 @@ function winFunction() {
   });
   setTimeout(function() {
     playSequence();
-  }, 3000);
+  }, 1000);
 }
 
 function playSound(sound) {
@@ -253,5 +215,11 @@ logo.style.color = "#fff";
 logo.innerHTML = "Simon Says";
 mainMenu.appendChild(logo);
 mainMenu.appendChild(playButton);
+
+//START BUTTON
+playButton.addEventListener("click", function() {
+  stateHandler([gameBox], "");
+  stateHandler([mainMenu], "none");
+});
 
 
