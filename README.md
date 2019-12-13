@@ -1,6 +1,6 @@
 # Simon Says Game
 
-![Simon Says](SimonSays.jpg)
+![Simon Says](https://github.com/emilohlund-git/Simon/blob/master/SimonSays.JPG)
 This is a simple 'Simon says' game made in Javascript, HTML5 & CSS3 without any dependencies.
  
 ## UX
