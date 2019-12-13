@@ -40,10 +40,15 @@ I've play tested the game enough to find that there are no bugs, pressing the hi
 
 To deploy the project I've been using Git Bash, regularly commiting my changes and pushing them to Github.
 > Use the 'cd' command to navigate to the appropriate folder on your pc. Ex. 'cd c/codeinstitute/simonsays".
-> Started using the 'git init' command to create a repository for my folder.
+>
+> I started using the 'git init' command to create a repository for my folder.
+>
 > Whenever needed I added my updated files which I was yet to push to Git using 'git add "filename"' or 'git add ./' to include the entire folder.
+>
 > Followed by the command 'git commit -m "A meaningful message on why you're commiting these changes / uploads to git".
+>
 > And finally 'git push origin master' to push my commited files to my remote repository at Github to the master branch.
+>>
 > 'git remote add origin https://github.com/user/repo.git' is the command you'd use to establish a connection to your repository on Github. Changing the URL to the URL of your repository.
 The final deployment is using Github Pages, which you can find a link for at the top of this page, also you can click [here](https://emilohlund-git.github.io/Simon/).
 
