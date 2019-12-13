@@ -1,7 +1,7 @@
 # Simon Says Game
 
 ![Simon Says](https://github.com/emilohlund-git/Simon/blob/master/SimonSays.JPG)
-This is a simple 'Simon says' game made in Javascript, HTML5 & CSS3 without any dependencies.
+This is a simple 'Simon says' game made in Javascript, HTML5 & CSS3.
 
 [Click here to test the game on Github Pages](https://emilohlund-git.github.io/Simon/).
  
